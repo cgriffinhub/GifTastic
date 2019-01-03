@@ -1,0 +1,11 @@
+.gif-container {
+ height: auto;
+ overflow: hidden;
+ 
+}
+.gif-container img {
+ height: 200px;
+}
+button {
+ margin:10px;
+ }
