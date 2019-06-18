@@ -1,12 +1,7 @@
+// array of existing films
 var topics = ['Robocop','Back to the Future','Leon The Professional','Hellraiser','Braveheart','Akira','City of God'];
 
-$(document).ready(function() {
-    for (var i = 0; i < topics.length; i++) {
-	movie_choice = topics[i];
-        $("#button-group").append('<button class="btn btn-success movie" data-movie="' + movie_choice + '">' + movie_choice + '</button>' );
-	}
-});
-
+// Append clickable button to idsplay gifs under each movie
 function addToArray() {
     $("#button-group").html('');
 	for (var i = 0; i < topics.length; i++) {
@@ -15,6 +10,7 @@ function addToArray() {
 	}
 }
 
+// click function to add search input value to array
 $('#add-movie').on('click',function(){
 	topics.push($("#movie").val());
 	addToArray();
@@ -74,6 +70,8 @@ $('#add-movie').on('click',function(){
         });
     });
 
+
+// click function to play/pause gif
 $('body').on('click', '.gif', function() {
     var src = $(this).attr("src");
   if($(this).hasClass('animate')){
@@ -86,3 +84,6 @@ $('body').on('click', '.gif', function() {
     $(this).attr('src', src.replace(/\_s.gif/i, ".gif"))
   }
 });
+
+// call function to append clickable buttons to idsplay gifs under each movie
+addToArray();
